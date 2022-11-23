@@ -1,0 +1,78 @@
+// обнуление
+@import "nullstyle.scss";
+
+// переменные
+$green:rgb(18, 238, 48);
+$color_1:#f2f2f2;
+$fz20:20px;
+
+// шаблоны
+%border{
+    border-bottom: 10px solid #f2f2f2;
+}
+
+//миксины
+@mixin font($weight, $fsize, $lheight) {
+    font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: $weight;
+    font-size: $fsize;
+    line-height: $lheight;
+}
+
+// вложенность
+.block{
+    font-size: 10px;
+    span{
+        color: #fff;
+        padding: 10px;
+        @extend %border
+    }
+}
+
+
+body {
+    @include font(400, 14px, 20px);
+}
+
+.header__container {
+    max-width: 1380px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+}
+
+.logo {
+    max-width: 151px;
+}
+.menu {
+
+		&__item {
+            @include font(700, 14px, 18px);
+            text-transform: uppercase;
+            color: #000000;
+		}
+}
+.icon-menu {
+        display: flex;
+		&__link {
+		}
+
+		&__img {
+		}
+}
+
+.search {
+    background: url(../img/header/search.svg) no-repeat 9px center;
+    width: 20px;
+    height: 20px;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+    cursor: pointer;
+    &:hover {
+        // background-color: #fff;
+    }
+}
