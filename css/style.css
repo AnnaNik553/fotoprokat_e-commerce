@@ -129,3 +129,47 @@ body {
   transition: all 0.5s;
   cursor: pointer;
 }
+.container {
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+.top {
+  background: #fff url(../img/header/header.png) no-repeat center;
+  background-size: cover;
+  min-height: 69vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.top__header {
+  background: #FFFFFF;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+  display: inline-block;
+  font-family: "Ubuntu", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 61px;
+  text-transform: uppercase;
+  color: #000000;
+  padding: 0 20px;
+  margin-left: 10%;
+}
+.top__header:last-child {
+  margin-bottom: 3%;
+  position: relative;
+}
+.top__header:last-child::before {
+  content: url(../img/header/bg.svg);
+  position: absolute;
+  left: -30px;
+  bottom: -50px;
+}
+.top__header_greengradient {
+  background: linear-gradient(270deg, #8EE901 0%, #4F9C2C 99.06%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
