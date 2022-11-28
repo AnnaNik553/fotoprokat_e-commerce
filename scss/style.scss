@@ -11,6 +11,15 @@ $fz20:20px;
     border-bottom: 10px solid #f2f2f2;
 }
 
+%baforeicon{
+    max-width: 32px;
+    max-height: 32px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -3px;
+}
+
 //миксины
 @mixin font($weight, $fsize, $lheight) {
     font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
@@ -115,5 +124,52 @@ body {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
+    }
+}
+
+.conditions {
+    &__row {
+        background: #F5F5F5;
+        display: flex;
+        align-items: center;
+        padding: 3% 10%;
+        justify-content: space-between;
+        
+        
+    }
+    &__item {
+        @include font(400, 14px, 20px);
+        color: #000000;
+        position: relative;
+        padding-left: 48px;
+        width: 21%;
+        &:not(:last-child){
+            padding-right: 15px;
+        }
+        
+        &_icon1:before {
+            content: url(../img/conditions/list.svg);
+            @extend %baforeicon;
+        }
+
+        &_icon2:before {
+            content: url(../img/conditions/time.svg);
+            @extend %baforeicon;
+        }
+
+        &_icon3:before {
+            content: url(../img/conditions/place.svg);
+            @extend %baforeicon;
+        }
+
+        &_icon4:before {
+            content: url(../img/conditions/product.svg);
+            @extend %baforeicon;
+        }
+
+        &_icon5:before {
+            content: url(../img/conditions/card.svg);
+            @extend %baforeicon;
+        }
     }
 }
